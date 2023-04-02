@@ -124,17 +124,17 @@ Using the optimal model, a logistic regression, we achieve an improvement over t
 Audio data can be a challenging format of data to work with, as it is disorganized and there are many aspects that require detailed knowledge of digital signal processing (DSP). The following are the formats that the audio will take through the steps that are required to process the audio data demonstrated with a sample audio file from the dataset.
 
 ### Waveform
-- The waveform of the data shows the oscillations of pressure amplitude over time. This is effectively the "raw" format of audio that a computer 
+- The waveform of the data shows the oscillations of pressure amplitude over time. This is effectively a "raw" format of audio data.
 - It is defined by the sampling frequency and bit depth.
     - The sampling frequency refers to how many samples of audio are played back per second (i.e. 44.1kHz means that every second, 44,100 samples are played). This determines the upper bound of frequencies that can be represented by the audio signal.
-    - The bit depth refers to how precise the amplitude values are, determining the dynamic range of an audio signal (i.e. 16-bit depth can represent 65,536 unique numbers, resulting in approx. 96dB of dynamic range)
-- To simplify, the sampling rate essentially controls the resolution of the x-axis and the bit depth controls the resolution of the y-axis
+    - The bit depth refers to how precise the amplitude values are, determining the dynamic range of an audio signal (i.e. 16-bit depth can represent 65,536 unique numbers, resulting in approx. 96dB of dynamic range).
+- To simplify, the sampling rate essentially controls the resolution of the x-axis and the bit depth controls the resolution of the y-axis.
 
 ![Waveform](images/waveform.png)
 
 ### Frequency Spectrum
 - The spectrum of a waveform shows the magnitude (in dB) of the signal per frequency.
-- Notice there is no time component here, rather the magnitude (dB) is with reference to frequencies of the entire audio signal (in this case 30 sec clip)
+- Notice there is no time component here, rather the magnitude (dB) is with reference to frequencies of the entire audio signal (in this case 30 sec clip).
 - While the plot below shows the spectrum for the entire signal, we will be using this concept to take the spectrum of small pieces of the signal to reintroduce a time component when we create spectrograms next.
 
 ![Spectrum](images/spectrum.png)
@@ -151,7 +151,7 @@ Audio data can be a challenging format of data to work with, as it is disorganiz
 - This "Mel-scale' can be summarized with Mel Frequency Cepstral Coefficients (MFCCs).
 - This is used in many machine learning cases because it filters the data more closely to how humans hear and it provides a better format of the data for the algorithm to learn on.
 - Additionally, the resolution can be drastically reduced and still retain important information. This can be thought of as a form of compressing the audio data.
-- Below is a much higher resolution Mel-spectrogram than will be used in the model
+- Below is a much higher resolution Mel-spectrogram than will be used in the model.
 
 ![Mel Spectrogram](images/mel-spectrogram.png)
 
@@ -161,9 +161,9 @@ Below is a sample of a Mel-spectrogram that will be input into the model. It is 
 
 ### Preprocessing Summary
 Data collection and preprocessing consist of three steps:
-- Collect audio data and genres
-- Convert audio to MFCCs
-- Save MFCCs and genres to disk
+- Collect audio data and genres.
+- Convert audio to MFCCs.
+- Save MFCCs and genres to disk.
 
 During this process, the audio files are split into 3-second segments. Because neural networks need a large number of samples to train on, this effectively increases the number of samples we will be able to feed into our network. Once all steps previously illustrated were complete, the data was ready to train the models.
 
